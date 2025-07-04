@@ -1,8 +1,22 @@
 import "./App.css";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router";
+import UserLayout from "./Components/Layout/UserLayout";
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        <Route path="/" element={<UserLayout />}></Route>
+      </Route>
+    )
+  );
   return (
     <>
-      <h1>Hello</h1>
+      <RouterProvider router={router} />
     </>
   );
 }
